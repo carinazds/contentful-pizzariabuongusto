@@ -6,313 +6,475 @@
     box-sizing: border-box;
 }
 
+/* Para garantir que o body tenha um estilo consistente */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffdb58;
+    color: #333;
+}
+
+/* Ajustes para o banner da página inicial */
 .inicial {
-    background: url("./img/c0f31c78-832e-4713-ab55-68b1ec1f9294.png");
-    background-position: center;
+    position: relative;
+    background: url("./img/pizza-hero.jpg") no-repeat center center;
     background-size: cover;
-    backdrop-filter: initial;
     width: 100%;
     height: 100vh;
-    color: #fff;
+    color: #fffdfd;
     font-family: "Playfair Display", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.inicial::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura para o texto */
+    z-index: 1;
 }
 
 .title {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.title p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.title span {
+    color: #ff1d0b; /* Cor de destaque */
+}
+
+/* Estilo para o botão flutuante do WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px; /* Distância do fundo da página */
+    right: 20px;  /* Distância da direita da página */
+    z-index: 999; /* Garante que o botão fique acima de outros elementos */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-
-    h1 {
-        font-size: 40px;  
-    }
-
-    p {
-        font-size: 25px;
-    }
-
-    span {
-        color: red;
-    }
 }
 
-.adress {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 28% auto 0 auto;
-    width: 50%;
-
-    h2 {
-        font-size: 30px;
-    }
-
-    p {
-        font-size: 22px;
-    }
+.whatsapp-icon {
+    width: 60px;  /* Tamanho da imagem do ícone do WhatsApp */
+    height: 60px; /* Tamanho da imagem do ícone do WhatsApp */
+    border-radius: 50%; /* Deixa o ícone redondo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave ao redor */
+    transition: transform 0.3s ease; /* Transição suave */
 }
 
-.chamada {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    text-align: center;
-    margin: 15px auto;
-
-    h3 {
-        font-size: 25px;
-        animation: jump 3s ease-in-out infinite;
-    }
+.whatsapp-icon:hover {
+    transform: scale(1.1); /* Aumenta o ícone quando o mouse passa sobre ele */
 }
 
-.menu {
-    background: url("./img/photo-1569470451072-68314f596aec.avif");
-    background-size: cover;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
+
+/* Estilo para o Contato e Menu */
+.contato, .menu {
     padding: 2rem 0;
+    text-align: center;
+}
+
+.contato h1, .menu h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contato .formulario, .menu .pizzas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+label {
+    color: #fff;
+    font-size: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff1d0b;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f40000;
 }
 
 .pizzas {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 350px));
-    gap: 30px;
-    padding: 2rem 0;
-    background-color: transparent;
-    height: 100%;
-
-    .snack {
-        background-color: #0c0d0f;
-        padding: 1rem 10px;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.5s ease-in-out;
-
-        h2 {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.5rem;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        img {
-            object-fit: cover;
-            width: 100%;
-            height: 11.25rem;
-            border-radius: 4px;
-            margin-bottom: 0.375rem;
-        }
-    }
-
-    .snack:hover {
-        background-color: #eee;
-
-        h2 {
-            color: #000;
-        }
-    }
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.contato {
+.snack {
+    background-color: #0c0d0f;
+    padding: 1rem 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.snack img {
+    object-fit: cover;
     width: 100%;
-    height: auto;
-    background: url("./img/photo-1569470451072-68314f596aec.avif");
-    background-size: cover;
-    padding-top: 5%;
-
-    h1 {
-        text-align: center;
-        color: #fff;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 45px;
-    }
+    height: 200px;
+    border-radius: 4px;
 }
 
-.formulario {
-    display: flex;
-    justify-content: center;
-
-    form {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        background-color: rgba(0, 0, 0, 0.8);
-        gap: 2rem;
-        margin-top: 3%;
-        padding: 2rem 0;
-    }
-
-    label {
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        font-size: 25px;
-        align-items: center;
-    }
-
-    input {
-        width: 80%;
-        padding: 10px;
-        outline: none;
-        border-radius: 10px;
-        background-color: #ccc;
-    }
-
-    button {
-        margin: 0 auto;
-        width: 30%;
-        padding: 10px 0;
-        background-color: #ff1d0b;
-        border: none;
-        border-radius: 20px;
-        color: #fff;
-        font-weight: 500;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #f40000;
-    }
+.snack h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.container-whatsapp {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    padding: 10px;
-    min-width: 40px;
-    min-height: 40px;
-    z-index: 999;
+.snack:hover {
+    background-color: #eee;
+}
 
-    .btn-whatsapp {
-       display: flex;
-       flex-direction: row;
-       align-items: center;
-       justify-content: center;
-       width: 60px;
-       height: 60px;
-       border-radius: 50%;
-       border: none;
-       cursor: pointer;
-       text-decoration: none;
-       background-color: #0c3;
+/* Página de Contato */
+.contato {
+    background: url('./img/wallpaper.avif') no-repeat center center fixed;
+    background-size: cover; /* A imagem cobre toda a tela */
+    padding: 5% 0;
+    color: #000000; /* Cor do texto para contrastar com o fundo */
+}
 
-       i {
-           font-size: 2rem;
-           color: #fff;
-       }
+/* Página de Menu */
+.menu {
+    background: url('./img/wallpaper.avif') no-repeat center center fixed;
+    background-size: cover; /* A imagem cobre toda a tela */
+    padding: 5% 0;
+    color: #000000; /* Cor do texto para contrastar com o fundo */
+}
 
-       &:hover {
-           background-color: #0c833d;
-           border: #fff;
-       }
-    }
+.ingredientes {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    padding-left: 0; /* Remove o preenchimento à esquerda */
+    margin-top: 10px;
+    font-size: 14px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
+
+.ingredientes li {
+    margin-bottom: 5px; /* Espaçamento entre os itens da lista */
+}
+
+
+/* Estilos para a seção do mapa */
+.mapa {
+    width: 100%;   /* Garante que a seção ocupe toda a largura */
+    height: 100vh; /* Garante que a altura seja 100% da altura da janela */
+    background-color: black; /* Fundo preto para a seção */
+    color: white;  /* Cor do texto em branco para contraste */
+    padding: 20px 0; /* Padding em cima e embaixo, ajustável */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.mapa h2 {
+    margin: 20px 0; /* Espaçamento do título */
+    font-size: 24px;
+}
+
+.map-container {
+    width: 100%;
+    height: 80vh; /* A altura do mapa ocupa 80% da tela, ajustável conforme necessário */
+    margin: 0 auto; /* Centraliza o contêiner do mapa */
+}
+
+iframe {
+    width: 100%; /* Faz o iframe preencher 100% da largura do contêiner */
+    height: 100%; /* Faz o iframe preencher 100% da altura do contêiner */
+    border: none; /* Remove a borda do iframe */
 }
 
 footer {
     background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
-    padding: 1.5rem 0 1rem 0;
+    padding: 1.5rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+}
 
-    h2 {
-        color: #fff;
+footer h2 {
+    margin: 0;
+}
+
+/* Estilos para a imagem da fachada e texto sobre a fachada */
+.fachada {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #333;
+}
+
+.fachada-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.fachada-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.fachada-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.fachada-text p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Seção sobre a pizzaria */
+/* Seção Sobre - Estilos do conteúdo de texto */
+.sobre {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.sobre h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+
+/* Adiciona uma borda suave para o texto */
+.sobre .textos {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente para o texto */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Ajuste para a imagem da fachada para que ela fique correta */
+.sobre img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilos para a foto com texto sobreposto */
+.foto-transparente {
+    position: relative;
+    background: url('./img/pizza-transparent.png') no-repeat center center;
+    background-size: cover;
+    padding: 4rem 0;
+    color: #fff;
+}
+
+.foto-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro para o texto */
+    border-radius: 8px;
+}
+
+.foto-overlay h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.foto-overlay p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Estilo para os links de redes sociais e plataformas */
+.social-links {
+    position: fixed;
+    bottom: 20px; /* Distância do fundo da página */
+    right: 20px;  /* Distância da direita da página */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os ícones */
+    z-index: 1000; /* Garante que os ícones fiquem acima de outros elementos */
+}
+
+/* Estilo individual para cada link de rede social */
+.social-link {
+    display: block;
+    width: 50px;  /* Largura do ícone */
+    height: 50px; /* Altura do ícone */
+    border-radius: 50%;  /* Faz o ícone ficar redondo */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar o ícone */
+    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Estilo para os ícones */
+.social-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Garante que a imagem cubra o ícone inteiro */
+}
+
+/* Efeito de hover para ampliar o ícone */
+.social-link:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .social-links {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .social-link {
+        width: 40px;  /* Reduz o tamanho dos ícones em telas menores */
+        height: 40px;
     }
 }
 
-@keyframes jump {
-    0% {
-        transform: translateY(0) scale(1);
-    }
-    25% {
-        transform: translateY(-6px) scale(1.1);
-    }
-    50% {
-        transform: translateY(0) scale(1);
-    }
-    75% {
-        transform: translateY(-6px) scale(1.1);
-    }
-    100% {
-        transform: translateY(0) scale(1);
-    }
-}
 
+
+/* Responsividade */
 @media screen and (max-width: 768px) {
-  .menu .pizzas {
-    grid-template-columns: repeat(2, minmax(200px, 350px));
-  }
-}
-
-@media screen and (max-width: 600px) {
-    .adress {
-        width: 70%;
-    }
-
-    .chamada {
-        width: 70%;
-    }
-
     .menu .pizzas {
-      grid-template-columns: repeat(2, minmax(150px, 250px));
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formulario form {
+        width: 80%;
     }
 }
 
 @media screen and (max-width: 475px) {
     .title h1 {
-        font-size: 28px;
+        font-size: 2.5rem;
     }
 
     .title p {
-        font-size: 20px;
+        font-size: 1rem;
     }
 
-    .adress {
-        margin: 60% auto 0 auto;
+    .contato h1, .menu h1 {
+        font-size: 2rem;
     }
 
-    .adress h2 {
-        font-size: 20px;
-    }
-
-    .adress p {
-        font-size: 18px;
-    }
-
-    .chamada h3 {
-        font-size: 20px;
+    .formulario form {
+        width: 90%;
     }
 
     .menu .pizzas {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .contato h1 {
-        font-size: 28px;
-    }
-
-    .formulario label {
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .title p {
-        font-size: 16px;
-    }
-
-    footer h2 {
-        font-size: 20px;
+        grid-template-columns: 1fr;
     }
 }

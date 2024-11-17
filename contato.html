@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Pizzaria Buon Gusto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./img/pizza.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav-link">Início</a></li>
+            <li><a href="menu.html" class="nav-link">Menu</a></li>
+            <li><a href="contato.html" class="nav-link">Contato</a></li>
+            <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <section class="contato">
+        <h1>Contato</h1>
+        <div class="formulario">
+            <form id="form-contato">
+                <label for="nome">
+                    <p id="label-nome">Nome</p>
+                    <input type="text" id="nome" name="nome" required>
+                </label>
+                <label for="sabor">
+                    <p id="label-sabor">Sabor da Pizza</p>
+                    <input type="text" id="sabor" name="sabor" required>
+                </label>
+                <label for="endereco">
+                    <p id="label-endereco">Endereço</p>
+                    <input type="text" id="endereco" name="endereco" required>
+                </label>
+                <label for="celular">
+                    <p id="telefone">Telefone</p>
+                    <input type="number" id="celular" name="celular" required>
+                </label>
+                <button type="submit">ENVIAR</button>
+            </form>
+            <div id="msg-sucesso" style="display: none; color: green; font-weight: bold;">
+                Mensagem enviada com sucesso! Em breve entraremos em contato.
+            </div>
+            <div id="msg-erro" style="display: none; color: red; font-weight: bold;">
+                Erro ao enviar a mensagem. Tente novamente.
+            </div>
+        </div>
+    </section>
+    
+    
+   <!-- Seção do Mapa -->
+<section class="mapa">
+    <h2>Venha nos Visitar!!! ⬇️</h2>
+    <div class="map-container">
+        <!-- Mapa do Google Maps incorporado -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d116920.79519348934!2d-46.598943483620566!3d-23.684008402793207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x94ce420aa3162323%3A0x21e79c06da521dcc!2sR.%20das%20Hort%C3%AAncias%2C%20817%20-%20Jardim%20do%20Est%C3%A1dio%2C%20Santo%20Andr%C3%A9%20-%20SP%2C%2009175-500!3m2!1d-23.6840302!2d-46.5165419!5e0!3m2!1spt-BR!2sbr!4v1731858358772!5m2!1spt-BR!2sbr"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p><strong>Endereço:</strong> R. das Hortências, 817 - Jardim do Estádio, Santo André - SP, 09175-500</p>
+        
+</section>
+
+
+
+
+<footer>
+    <p>&copy; Todos os direitos reservados - Pizzaria Buon Gusto</p>
+</footer>
+
+    <!-- Incluindo o arquivo de script JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>
